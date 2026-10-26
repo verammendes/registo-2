@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* geral layout e cores */
+body {
+  background-color: #d6d6d5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout {
+  position: relative;
+  flex: 1;
+  margin: 90px 6% 0;
+  padding-bottom: 80px;
+  min-height: 90vh;
+}
+
+.text2 {
+  min-width: 0;
+  max-width: 55%;
+  font-size: 130%;
+  font-family: "Figtree", sans-serif;
+  line-height: 150%;
+  color: #DC4449;
+}
+
+/* pop ups principais */
+.clickable {
+  cursor: pointer;
+  color: #DC4449;
+  border-bottom: 2px solid #DC4449;
+}
+
+.popup {
+  display: none;
+  color: #3d3535;
+  font-family: 'Figtree', sans-serif;
+  font-size: 95%;
+  line-height: 140%;
+}
+
+.popup.show {
+  display: block;
+  margin: 1% 0 2% 5%;
+}
+
+/* pop ups interiores */
+.clickable-inside {
+  cursor: pointer;
+  color: #3d3535;
+  border-bottom: 2px solid #3d3535;
+}
+
+.popup-inside {
+  display: none;
+  color: #3d3535;
+}
+
+.popup-inside.show {
+  display: block;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+/* números clicáveis no texto */
+.numbers {
+  color: #DC4449;
+  font-family: "Figtree", sans-serif;
+  font-size: 80%;
+  cursor: pointer;
+}
+
+
+.ref {
+  display: none;
+  position: absolute;
+  z-index: 5;
+}
+
+.ref.show {
+  display: block;
+}
+
+.ref:hover {
+  z-index: 50;
+}
+
+.ref-num {
+  display: block;
+  margin-bottom: 6px;
+  color: #DC4449;
+  font-family: "Figtree", sans-serif;
+  font-size: 90%;
+  line-height: 100%;
+}
+
+.frame {
+  display: block;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: contrast(1.15) blur(12px);
+  transform: scale(1.1);
+  transition: filter 0.35s ease, transform 0.35s ease;
+  cursor: pointer;
+}
+
+/* hover */
+.ref:hover .frame img {
+  filter: contrast(1.15) blur(0);
+  transform: scale(1);
+}
+
+/* posições */
+.pos-1 { right: 2%;  width: 280px; }
+.pos-2 { right: 14%; width: 240px; }
+.pos-3 { right: 0;   width: 300px; }
+.pos-4 { right: 10%; width: 260px; }
+.pos-5 { right: 4%;  width: 290px; }
+.pos-6 { right: 15%; width: 250px; }
+.pos-7 { right: 1%;  width: 270px; }
+.pos-8 { right: 12%; width: 280px; }
+.pos-9 { right: 6%;  width: 260px; }
+
+/* ecrãs pequenos: imagens mais pequenas, encostadas à direita */
+@media (max-width: 900px) {
+  .text2 { max-width: 100%; }
+  .ref { width: 40% !important; right: 0 !important; }
+}
